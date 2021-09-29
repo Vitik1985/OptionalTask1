@@ -1,20 +1,16 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.lang.reflect.Array;
+
 
 public class OptionalTask1 { //Найти самое короткое и самое длинное число. Вывести найденные числа и их длину.
-    public static void main(String[] args) throws IOException {
-        String a, b;
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("enter the first number: ");
-        a = br.readLine();
-        System.out.print("enter the second number: ");
-        b = br.readLine();
+    public static void main(String[] args) {
+        int max;
+        int min;
+        int [] array_number = {22333, 1233, 12323434, 1, 21, 344, 323567};
 
-        char [] array_1 = a.toCharArray();
-        char [] array_2 = b.toCharArray();
 
+
+        if (array_1.length > array_2.length) {
+            max = array_1.length;
+        }
 
     }
 
