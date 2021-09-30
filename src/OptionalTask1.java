@@ -7,47 +7,39 @@ import java.util.Collections;
 public class OptionalTask1 { //Найти самое короткое и самое длинное число. Вывести найденные числа и их длину.
     public static void main(String[] args) throws IOException {
         String command;
-        int max;
-        int min;     // вводить с консоли
+        int max, number_max;
+        int min, number_min;     // вводить с консоли
         boolean i = true;
-        ArrayList<Integer> array_number = new ArrayList<>();
+        ArrayList<String> array_number = new ArrayList<>();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int a;
         System.out.print("Enter the number or stop: ");
         while (i) {
-           command = br.readLine();
-           if (!command.equals("stop")) {
-               System.out.print("Enter the number or stop: ");
-               a = Integer.parseInt(command);
-               array_number.add(a);
-           }
-            else {
+            command = br.readLine();
+            if (!command.equals("stop")) {
+                System.out.print("Enter the number or stop: ");
+                array_number.add(command);
+            } else {
                 i = false;
-           }
-        }
-        Collections.sort(array_number);
-        if (array_number.get(0).equals(array_number.get(array_number.size()-1))) {
-            min = array_number.get(0);
-            max = array_number.get(array_number.size() - 1);
-            System.out.println("min: " + min);
-
-            for (int j = 1; j < array_number.size(); j++) {
-                if (min == array_number.get(j + 1)) {
-                    min = array_number.get(j);
-                    System.out.println("min: " + min);
-                }
-            }
-
-            System.out.println("max: " + max);
-            for (int k = array_number.size()-1; k >= 0 ; k--){
-                if (max == array_number.get(k)) {
-                    System.out.print("max: " + " ");
-                }
             }
         }
-        else {
-            System.out.println("min = max = " + array_number.get(0));
-        }
+        max = array_number.get(0).length();
+        min = array_number.get(0).length();
+        number_min = Integer.parseInt(array_number.get(0));
+        number_max = Integer.parseInt(array_number.get(0));
 
+        for(int j = 0; j < array_number.size(); j++) {
+            if (min > array_number.get(j).length()) {
+                min = array_number.get(j).length();
+                number_min = Integer.parseInt(array_number.get(j));
+            }
+            if (max < array_number.get(j).length()) {
+                max = array_number.get(j).length();
+                number_max = Integer.parseInt(array_number.get(j));
+            }
+
+        }
+        System.out.println("Максимальная длинна числа: " + max + " , максимальное число: " + number_max);
+        System.out.println("Минимальная длинна числа: " + min + " , минимальное число: " + number_min);
     }
 }
