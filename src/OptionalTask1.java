@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class OptionalTask1 { //Найти самое короткое и самое длинное число. Вывести найденные числа и их длину.
+public class OptionalTask1 { //Найти самое короткое и самое длинное число. Вывести найденные числа и их длину. При условии: без повторов чисел
     public static void main(String[] args) throws IOException {
         String command;
         int max, number_max;
